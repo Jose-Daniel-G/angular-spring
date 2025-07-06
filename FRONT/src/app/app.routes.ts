@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { LayoutComponent } from './core/layout/layout.component';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { FormularioComponent } from './modules/formulario-display/formulario/formulario.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // 🔹 Asegura que inicie en login
@@ -18,8 +17,20 @@ export const routes: Routes = [
         data: { roles: ['administradorWM'] } // Solo el superAdministradorWM puede acceder
       },
       {
-        path: 'procesar',
-        loadChildren: () => import('./modules/procesar/procesar.module').then(m => m.ProcesarModule),
+        path: 'personas',
+        loadChildren: () => import('./modules/personas/personas.module').then(m => m.PersonasModule),
+        canActivate: [AuthGuard],
+        data: { roles: ['administradorWM', 'presidenteCAEC', 'tesoreroCAEC', 'presidenteCV'] }
+      },
+      {
+        path: 'estudiantes',
+        loadChildren: () => import('./modules/estudiantes/estudiantes.module').then(m => m.EstudiantesModule),
+        canActivate: [AuthGuard],
+        data: { roles: ['administradorWM', 'presidenteCAEC', 'tesoreroCAEC', 'presidenteCV'] }
+      },
+      {
+        path: 'profesores',
+        loadChildren: () => import('./modules/profesores/profesores.module').then(m => m.ProfesoresModule),
         canActivate: [AuthGuard],
         data: { roles: ['administradorWM', 'presidenteCAEC', 'tesoreroCAEC', 'presidenteCV'] }
       },
@@ -40,14 +51,7 @@ export const routes: Routes = [
         loadChildren: () => import('./modules/registro-compras/registro-compras.module').then(m => m.RegistroComprasModule),
         canActivate: [AuthGuard],
         data: { roles: ['administradorWM', 'presidenteCAEC', 'tesoreroCAEC', 'presidenteCV'] } // Todos pueden acceder
-      },      
-      {
-        path: 'formulario-completo', // Puedes elegir la URL que prefieras
-        component: FormularioComponent, // Asigna directamente el componente standalone
-        canActivate: [AuthGuard], // Asegúrate de que solo usuarios autenticados puedan acceder
-        // Opcional: Define roles específicos si solo ciertos usuarios deben ver este formulario
-        data: { roles: ['administradorWM', 'algunRolEspecificoDelFormulario'] }
-      },
+      },  
     ]
   },
   { path: '**', redirectTo: '/login' } // 🔹 Redirige cualquier otra URL inválida a login

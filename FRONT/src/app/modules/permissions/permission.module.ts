@@ -1,4 +1,3 @@
-// src/app/modules/formulario-display/formulario-display.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Necesitas CommonModule para directivas como *ngIf, *ngFor
 import { PermissionRoutingModule } from './permission-routing.module';
