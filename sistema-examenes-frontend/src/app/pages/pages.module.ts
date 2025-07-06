@@ -8,7 +8,12 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Already th
 import { MatInputModule } from '@angular/material/input';         // Already there, good!
 import { MatButtonModule } from '@angular/material/button';       // Already there, good!
 import { MatSnackBarModule } from '@angular/material/snack-bar';   // Already there, good!
-
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+// import { authInterceptorProviders } from './services/auth.interceptor';
+// import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+// import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 // Routing Module for this feature
 import { PagesRoutingModule } from './pages-routing.module'; // <-- Import the routing module
 
@@ -28,7 +33,10 @@ import { SignupComponent } from './signup/signup.component';
     MatFormFieldModule,  // Provides mat-form-field, mat-label, mat-hint
     MatInputModule,      // Provides matInput directive
     MatButtonModule,     // Provides mat-button
-    MatSnackBarModule   // Provides MatSnackBar
+    MatSnackBarModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
     // BrowserAnimationsModule, // Only needed in root module, not feature modules usually.
                             // If you encounter issues later, check if it's imported in app.module.ts (if you have one)
   ],
