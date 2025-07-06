@@ -30,7 +30,7 @@
             <td>{{ estudiante.numero_matricula }}</td>
             <td>{{ estudiante.grado }}</td>
             <td class="text-center">
-              <a class="btn btn-sm btn-outline-dark me-2" [routerLink]="['/estudiantes', estudiante.id_persona, 'editar']">Editar</a>
+              <a class="btn btn-sm btn-outline-dark me-2" [routerLink]="['/estudiantes', estudiante.id_persona, 'edit']">Editar</a>
               <button class="btn btn-sm btn-danger" (click)="eliminarEstudiante(estudiante.id_persona)">Eliminar</button>
             </td>
           </tr>

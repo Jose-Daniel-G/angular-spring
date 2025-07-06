@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <h3>Editar Estudiante</h3>
+  <form (ngSubmit)="guardarCambios()">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input id="nombre" type="text" class="form-control" [(ngModel)]="estudiante.nombre" name="nombre" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input id="apellido" type="text" class="form-control" [(ngModel)]="estudiante.apellido" name="apellido" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+      <input id="fecha_nacimiento" type="date" class="form-control" [(ngModel)]="estudiante.fecha_nacimiento" name="fecha_nacimiento" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <input id="email" type="email" class="form-control" [(ngModel)]="estudiante.email" name="email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input id="telefono" type="text" class="form-control" [(ngModel)]="estudiante.telefono" name="telefono" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="numero_matricula" class="form-label">Número de Matrícula</label>
+      <input id="numero_matricula" type="text" class="form-control" [(ngModel)]="estudiante.numero_matricula" name="numero_matricula" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="grado" class="form-label">Grado</label>
+      <input id="grado" type="text" class="form-control" [(ngModel)]="estudiante.grado" name="grado" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+    <a [routerLink]="['/estudiantes']" class="btn btn-secondary ms-2">Cancelar</a>
+  </form>
+</div>

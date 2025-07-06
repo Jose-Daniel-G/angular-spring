@@ -29,7 +29,7 @@
             <td>{{ persona.telefono }}</td>
             <td class="text-center">
               <a class="btn btn-sm btn-outline-dark me-2"
-                 [routerLink]="['/personas', persona.id_persona, 'editar']">Editar</a>
+                 [routerLink]="['/personas', persona.id_persona, 'edit']">Editar</a>
               <button class="btn btn-sm btn-danger" (click)="eliminarPersona(persona.id_persona)">Eliminar</button>
             </td>
           </tr>

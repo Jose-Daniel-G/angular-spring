@@ -5,12 +5,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EstudiantesRoutingModule } from './estudiantes-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { IndexComponent } from './index/index.component';
+import { EditComponent } from './edit/edit.component';
 // import { HttpClientModule } from '@angular/common/http'; // ¡Importa HttpClientModule aquí!
 
 @NgModule({
   declarations: [
     CreateComponent, // Declara el componente
-    IndexComponent
+    IndexComponent,
+    EditComponent
   ],
   imports: [
     CommonModule, // Necesario para directivas estructurales (ngIf, ngFor)
